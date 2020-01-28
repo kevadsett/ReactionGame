@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 01e8ae8719e2f485f9c5170bd9afca6e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - PartyPopperParticlePrefab: {fileID: 1574945175289807634, guid: c470ed52c399e4e9bbf19216151f2694,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

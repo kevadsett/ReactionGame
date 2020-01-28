@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ThingDisplayer : MonoBehaviour {
 	public GameObject Thing;
@@ -7,8 +8,8 @@ public class ThingDisplayer : MonoBehaviour {
 	public Vector2 TimeRange;
 
 	public GameObject WaitText;
-	public GameObject P1Text;
-	public GameObject P2Text;
+	public Text P1Text;
+	public Text P2Text;
 	private Coroutine RunningRoutine;
 
 	public bool IsOnDisplay { private set; get;}
@@ -28,8 +29,8 @@ public class ThingDisplayer : MonoBehaviour {
 	public void Stop()
 	{
 		Thing.SetActive(false);
-		P1Text.SetActive(false);
-		P2Text.SetActive(false);
+		P1Text.color = new Color(P1Text.color.r, P1Text.color.g, P1Text.color.b, 0.3f);
+		P2Text.color = new Color(P2Text.color.r, P2Text.color.g, P2Text.color.b, 0.3f);
 		IsOnDisplay = false;
 		if (RunningRoutine != null)
 		{
@@ -43,8 +44,8 @@ public class ThingDisplayer : MonoBehaviour {
 
 		Thing.SetActive(true);
 		WaitText.SetActive(false);
-		P1Text.SetActive(true);
-		P2Text.SetActive(true);
+		P1Text.color = new Color(P1Text.color.r, P1Text.color.g, P1Text.color.b, 1f);
+		P2Text.color = new Color(P2Text.color.r, P2Text.color.g, P2Text.color.b, 1f);
 		IsOnDisplay = true;
 	}
 }

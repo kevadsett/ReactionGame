@@ -9,6 +9,11 @@ public class ScoreGiver : MonoBehaviour
     public Text Player1ScoreText;
     public Text Player2ScoreText;
 
+    public PartyPopper P1PartyPopper;
+    public PartyPopper P2PartyPopper;
+
+    public CameraShaker MyCameraShaker;
+
     private int Player1Score;
     private int Player2Score;
 
@@ -22,6 +27,8 @@ public class ScoreGiver : MonoBehaviour
         }
         Player1Score++;
         Player1ScoreText.text = Player1Score.ToString();
+        P1PartyPopper.Pop();
+        MyCameraShaker.Shake();
 
         BroadcastMessage("OnScoreIncreased", new Vector2(Player1Score, 0));
         if (IsActive)
@@ -38,6 +45,8 @@ public class ScoreGiver : MonoBehaviour
         }
         Player2Score++;
         Player2ScoreText.text = Player2Score.ToString();
+        P2PartyPopper.Pop();
+        MyCameraShaker.Shake();
 
         BroadcastMessage("OnScoreIncreased", new Vector2(Player2Score, 1));
         if (IsActive)
